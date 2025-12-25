@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Sweet GH",
+  "author": "solo1h",
+  "description": "Sweet GH - extend GitHub Web UI",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "version": "0.1.0",
+  "minimum_chrome_version": "110",
+  "offline_enabled": true,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["sweet_gh.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
