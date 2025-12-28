@@ -1,6 +1,6 @@
 # Sweet GH
 ## Yet another one Chrome extension for [GitHub](https://github.com/) Web UI.
-![Logo](pkg/logo.png)
+<img src="https://raw.githubusercontent.com/solo1h/sweet-gh/refs/heads/main/pkg/logo.png" alt="Logo" width="300">
 
 ## Features
 PR page:
