@@ -7,10 +7,17 @@ const gitCliFetchPR = () => {
   const headRefElements = document.querySelectorAll("span.head-ref");
   if (!baseRefElement || headRefElements.length === 0) return;
 
-  const [baseUser, baseRef] = baseRefElement.textContent.trim().split(":", 2);
-  const [headUser, headRef] = headRefElements[0].textContent
-    .trim()
-    .split(":", 2);
+  let baseUser = null;
+  let baseRef = baseRefElement.textContent.trim();
+  let headUser = null;
+  let headRef = headRefElements[0].textContent.trim();
+
+  if (baseRef.indexOf(':') > -1) {
+    [baseUser, baseRef] = baseRef.split(":", 2);
+  }
+  if (headRef.indexOf(':') > -1) {
+    [headUser, headRef] = headRef.split(":", 2);
+  }
 
   const forkName = headRefElements[0]
     .getAttribute("title")
